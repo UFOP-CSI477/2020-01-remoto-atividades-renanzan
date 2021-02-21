@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf">
+        <link rel="stylesheet" href="../styles/global.css">
+        <title>Estados</title>
+    </head>
+
+    <body>
+        <header>
+            <div id="header">
+                <h1>Estados</h1>
+
+                <div id="menu-items">
+                    <a href="./home.html">Home</a>
+                    <a href="./peoples.html">Pessoas</a>
+                    <a current href="#">Estados</a>
+                    <a href="./cities.html">Cidades</a>
+                    <a href="./products.html">Produtos</a>
+                    <a href="./profile.html">Perfil</a>
+                    <a href="#">Sair</a>
+                </div>
+            </div>
+
+            <div id="sub-header">
+                UFOP ● Universidade Federal de Ouro Preto
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h2>Lista de Estados</h2>
+
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Abreviação</th>
+                            <th>Nome do estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>SP</td>
+                            <td>São Paulo</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>MG</td>
+                            <td>Minas Gerais</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td>Quantidade</td>
+                            <td>2</td>
+                            <td>Estados</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <section>
+                <h2>Cadastrar estado</h2>
+
+                <form action="#" method="POST">
+                    <input placeholder="Abreviação" maxlength="2" />
+                    <input placeholder="Nome do estado" step=".5" />
+
+                    <input type="submit" value="Cadastrar" />
+                </form>
+            </section>
+        </main>
+    </body>
+</html>

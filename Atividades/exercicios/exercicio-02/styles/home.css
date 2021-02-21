@@ -1,0 +1,68 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div#user-card {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 14px;
+    background: #495057;
+}
+
+div#user-card section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+div#user-card section:first-child {
+    flex: 1;
+    border-right: 16px solid rgba(0, 0, 0, .02);
+    gap: 24px;
+}
+
+div#user-card section:first-child * {
+    color: #FFF;
+}
+
+div#user-card section:first-child div#user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+div#user-card section:last-child {
+    flex: 3;
+    background: rgba(255, 255, 255, .65);
+    align-items: flex-end;
+    gap: 8px;
+    padding: 24px 32px;
+}
+
+div#user-card section:last-child p {
+    width: 400px;
+    line-height: 1.5em;
+    text-indent: 1.5em;
+    text-align: justify;
+}
+
+div#user-card section:last-child label {
+    color: rgba(0, 0, 0, .65);
+    font-size: 12px;
+}
+
+div#user-card img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 8px solid rgba(0, 0, 0, .02);
+}

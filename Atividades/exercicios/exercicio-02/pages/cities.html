@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../styles/global.css">
+        <title>Cidades</title>
+    </head>
+
+    <body>
+        <header>
+            <div id="header">
+                <h1>Cidades</h1>
+
+                <div id="menu-items">
+                    <a href="./home.html">Home</a>
+                    <a href="./peoples.html">Pessoas</a>
+                    <a href="./states.html">Estados</a>
+                    <a current href="#">Cidades</a>
+                    <a href="./products.html">Produtos</a>
+                    <a href="./profile.html">Perfil</a>
+                    <a href="#">Sair</a>
+                </div>
+            </div>
+
+            <div id="sub-header">
+                UFOP ● Universidade Federal de Ouro Preto
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h2>Lista de Cidades</h2>
+
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome da cidade</th>
+                            <th>Estado</th>
+                            <th>Número de habitantes (2020)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>João Monlevade</td>
+                            <td>MG</td>
+                            <td>80.416</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Taubaté</td>
+                            <td>SP</td>
+                            <td>317.915</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td>Quantidade</td>
+                            <td colspan="2">2</td>
+                            <td>Cidades</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <section>
+                <h2>Cadastrar estado</h2>
+
+                <form action="#" method="POST">
+                    <input placeholder="Abreviação" maxlength="2" />
+                    <input placeholder="Nome do estado" step=".5" />
+
+                    <input type="submit" value="Cadastrar" />
+                </form>
+            </section>
+        </main>
+    </body>
+</head>

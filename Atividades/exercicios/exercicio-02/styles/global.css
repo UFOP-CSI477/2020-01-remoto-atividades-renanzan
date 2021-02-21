@@ -1,0 +1,153 @@
+@import './global.font.css';
+
+* {
+    margin: 0;
+    font-family: raleway, Arial;
+    color: rgba(0, 0, 0, .755);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header div#header {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    padding: 0 80px 0 24px;
+}
+
+header div#header h1 {
+    flex: 1;
+    font-family: 'DM Serif Display', 'Times New Roman';
+    font-weight: 800;
+    font-style: italic;
+    font-size: 32px;
+}
+
+header div#header div#menu-items {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 100%;
+}
+
+header div#header div#menu-items a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #A69EA1;
+    border-bottom: 2px solid transparent;
+    padding: 8px 0;
+    transition: 250ms;
+    font-size: 14px;
+}
+
+header div#header div#menu-items a:hover {
+    border-color: #A69EA1;
+}
+
+header div#header div#menu-items a[current] {
+    color: #ED1C23;
+    border-color: #ED1C23;
+}
+
+header div#header div#menu-items a.current:hover {
+    border-color: #ED1C23;
+}
+
+header #sub-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 24px;
+    padding: 0 24px;
+    font-size: 12px;
+    background: #ED1C23;
+    color: #FFF;
+}
+
+main {
+    flex: 1;
+    padding: 16px;
+    min-height: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: none;
+    margin: 16px 0 24px 0;
+}
+
+table td, table th {
+    border: none;
+    padding: 8px;
+}
+
+table tr:nth-child(even) {
+    background-color: #EAF9E6;
+}
+
+table tr:hover {
+    background-color: #83D161;
+}
+
+table tr:hover td {
+    color: #FFF;
+}
+
+table tr td:hover {
+    background-color: #57B847;
+}
+
+table th {
+    padding: 12px;
+    text-align: left;
+    background-color: #333333;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+table th:hover {
+    background: #484848;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 600px;
+    margin: 8px 0;
+}
+
+form input {
+    height: 40px;
+    border: 1px solid #A69EA1;
+    border-radius: 4px;
+    outline: none;
+    padding: 0 8px;
+}
+
+form input:not([type="submit"]):focus {
+    border-color: #83D161;
+}
+
+form input[type="submit"] {
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 250ms background-color, 250ms opacity;
+}
+
+form input[type="submit"]:hover {
+    background-color: #83D161;
+    color: #FFF;
+    border-color: transparent;
+}
+
+form input[type="submit"]:active {
+    opacity: .7;
+}

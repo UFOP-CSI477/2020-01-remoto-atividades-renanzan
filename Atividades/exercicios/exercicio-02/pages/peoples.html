@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../styles/global.css">
+        <title>Pessoas</title>
+    </head>
+
+    <body>
+        <header>
+            <div id="header">
+                <h1>Pessoas</h1>
+
+                <div id="menu-items">
+                    <a href="./home.html">Home</a>
+                    <a current href="#">Pessoas</a>
+                    <a href="./states.html">Estados</a>
+                    <a href="./cities.html">Cidades</a>
+                    <a href="./products.html">Produtos</a>
+                    <a href="./profile.html">Perfil</a>
+                    <a href="#">Sair</a>
+                </div>
+            </div>
+
+            <div id="sub-header">
+                UFOP ● Universidade Federal de Ouro Preto
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h2>Lista de Pessoas</h2>
+                <p>Uma lista de pessoas cadastradas.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Username</th>
+                            <th>Nome Completo</th>
+                            <th>Data de nascimento</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>yagolorenzogustavodarocha</td>
+                            <td>Yago Lorenzo Gustavo da Rocha</td>
+                            <td>04/05/1976</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>renanzan</td>
+                            <td>Renan Henrique Zanoti</td>
+                            <td>10/06/1998</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>joanaraquelmelissadasilva</td>
+                            <td>Joana Raquel Melissa da Silva</td>
+                            <td>21/01/1996</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>barbarajuliabernardes_</td>
+                            <td>Bárbara Julia Bernardes</td>
+                            <td>27/09/1988</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td>Quantidade</td>
+                            <td colspan="2">4</td>
+                            <td>Pessoas</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <section>
+                <h2>Registrar Pessoa</h2>
+
+                <form action="#" method="POST">
+                    <input placeholder="Username" />
+                    <input type="password" placeholder="Senha" />
+                    <input placeholder="Nome completo" />
+                    <input type="date" placeholder="Data de nascimento" />
+
+                    <input type="submit" value="Cadastrar" />
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
