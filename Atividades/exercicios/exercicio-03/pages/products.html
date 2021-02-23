@@ -10,86 +10,115 @@
     
     <body>
         <header>
-            <h1>Produtos</h1>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">WEB - Exercício 3</a>
 
-            <a href="./home.html">Home</a>
-            <a href="./peoples.html">Pessoas</a>
-            <a href="./states.html">Estados</a>
-            <a href="./cities.html">Cidades</a>
-            <a href="#">Produtos</a>
-            <a href="./profile.html">Perfil</a>
-            <a href="#">Sair</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Paginal Inicial</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./peoples.html">Pessoas</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./states.html">Estados</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./cities.html">Cidades</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Produtos</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./profile.html">Perfil</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Sair</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
         </header>
 
-        <main>
-            <section>
-                <h2>Lista de Produtos</h2>
+        <main style="margin-top: 56px;">
+            <div class="p-5 d-flex flex-column gap-5">
+                <section>
+                    <h2 class="lead mb-3">Lista de Produtos</h2>
 
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nome do produto</th>
-                            <th>Categoria</th>
-                            <th>Descrição</th>
-                            <th>Valor</th>
-                        </tr>
-                    </thead>
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Id</th>
+                                <th>Nome do produto</th>
+                                <th>Categoria</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Pelicula Protetora S10 Plus</td>
-                            <td>Celular</td>
-                            <td>Película de nano gel dupla para Galaxy S10 Plus</td>
-                            <td>R$ 49,92</td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Pelicula Protetora S10 Plus</td>
+                                <td>Celular</td>
+                                <td>Película de nano gel dupla para Galaxy S10 Plus</td>
+                                <td>R$ 49,92</td>
+                            </tr>
 
-                        <tr>
-                            <td>2</td>
-                            <td>Amplificador de antena de TV digital HD</td>
-                            <td>TV</td>
-                            <td>A antena pode fornecer imagens nítidas de HDTV 1080p 4K e mais canais.</td>
-                            <td>R$ 68,46</td>
-                        </tr>
-                    </tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>Amplificador de antena de TV digital HD</td>
+                                <td>TV</td>
+                                <td>A antena pode fornecer imagens nítidas de HDTV 1080p 4K e mais canais.</td>
+                                <td>R$ 68,46</td>
+                            </tr>
+                        </tbody>
 
-                    <tfoot>
-                        <tr>
-                            <td>Quantidade</td>
-                            <td colspan="3">2</td>
-                            <td>Produtos</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </section>
+                        <tfoot>
+                            <tr>
+                                <td>Quantidade</td>
+                                <td colspan="3">2</td>
+                                <td>Produtos</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </section>
 
-            <hr />
+                <section>
+                    <form class="card w-50" action="#" method="POST">
+                        <div class="card-body">
+                            <h2 class="lead mb-3">Cadastrar produto</h2>
 
-            <section>
-                <h2>Cadastrar produto</h2>
+                            <input class="form-control mb-2" placeholder="Nome do produto" />
 
-                <form action="#" method="POST">
-                    <input placeholder="Nome do produto" />
-                    <br /><br />
+                            <select class="form-select mb-2" name="categories" id="categories">
+                                <option selected disabled>Categoria</option>
+                                <option>Acessórios</option>
+                                <option>TV</option>
+                                <option>Celular</option>
+                            </select>
 
-                    <label for="categories">Categoria</label>
-                    <select name="categories" id="categories">
-                        <option>Acessórios</option>
-                        <option>TV</option>
-                        <option>Celular</option>
-                    </select>
-                    <br /><br />
+                            <textarea class="form-control mb-2" placeholder="Descrição"></textarea>
+                            <input class="form-control mb-4" type="number" placeholder="Valor (R$)" step=".5" />
 
-                    <textarea placeholder="Descrição"></textarea>
-                    <br /><br />
-
-                    <input type="number" placeholder="Valor (R$)" step=".5" />
-                    <br /><br />
-
-                    <input type="submit" value="Cadastrar" />
-                </form>
-            </section>
+                            <button class="btn btn-primary" type="submit">Cadastrar</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
         </main>
     </body>
 </html>

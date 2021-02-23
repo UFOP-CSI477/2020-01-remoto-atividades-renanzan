@@ -10,92 +10,119 @@
 
     <body>
         <header>
-            <h1>Pessoas</h1>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">WEB - Exercício 3</a>
 
-            <a href="./home.html">Home</a>
-            <a href="#">Pessoas</a>
-            <a href="./states.html">Estados</a>
-            <a href="./cities.html">Cidades</a>
-            <a href="./products.html">Produtos</a>
-            <a href="./profile.html">Perfil</a>
-            <a href="#">Sair</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Paginal Inicial</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Pessoas</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./states.html">Estados</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./cities.html">Cidades</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./products.html">Produtos</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./profile.html">Perfil</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Sair</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
         </header>
 
-        <main>
-            <section>
-                <h2>Lista de Pessoas</h2>
+        <main style="margin-top: 56px;">
+            <div class="p-5 d-flex flex-column gap-5">
+                <section>
+                    <h2 class="lead mb-3">Lista de Pessoas</h2>
 
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Username</th>
-                            <th>Nome Completo</th>
-                            <th>Data de nascimento</th>
-                        </tr>
-                    </thead>
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Id</th>
+                                <th>Username</th>
+                                <th>Nome Completo</th>
+                                <th>Data de nascimento</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>yagolorenzogustavodarocha</td>
-                            <td>Yago Lorenzo Gustavo da Rocha</td>
-                            <td>04/05/1976</td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>yagolorenzogustavodarocha</td>
+                                <td>Yago Lorenzo Gustavo da Rocha</td>
+                                <td>04/05/1976</td>
+                            </tr>
 
-                        <tr>
-                            <td>2</td>
-                            <td>renanzan</td>
-                            <td>Renan Henrique Zanoti</td>
-                            <td>10/06/1998</td>
-                        </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>renanzan</td>
+                                <td>Renan Henrique Zanoti</td>
+                                <td>10/06/1998</td>
+                            </tr>
 
-                        <tr>
-                            <td>3</td>
-                            <td>joanaraquelmelissadasilva</td>
-                            <td>Joana Raquel Melissa da Silva</td>
-                            <td>21/01/1996</td>
-                        </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>joanaraquelmelissadasilva</td>
+                                <td>Joana Raquel Melissa da Silva</td>
+                                <td>21/01/1996</td>
+                            </tr>
 
-                        <tr>
-                            <td>4</td>
-                            <td>barbarajuliabernardes_</td>
-                            <td>Bárbara Julia Bernardes</td>
-                            <td>27/09/1988</td>
-                        </tr>
-                    </tbody>
+                            <tr>
+                                <td>4</td>
+                                <td>barbarajuliabernardes_</td>
+                                <td>Bárbara Julia Bernardes</td>
+                                <td>27/09/1988</td>
+                            </tr>
+                        </tbody>
 
-                    <tfoot>
-                        <tr>
-                            <td>Quantidade</td>
-                            <td colspan="2">4</td>
-                            <td>Pessoas</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </section>
+                        <tfoot>
+                            <tr>
+                                <td>Quantidade</td>
+                                <td colspan="2">4</td>
+                                <td>Pessoas</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </section>
 
-            <hr />
+                <section>
+                    <form class="card w-50" action="#" method="POST">
+                        <div class="card-body">
+                            <h2 class="lead mb-3">Registrar Pessoa</h2>
 
-            <section>
-                <h2>Registrar Pessoa</h2>
+                            <input class="form-control mb-2" placeholder="Username" />
+                            <input class="form-control mb-2" type="password" placeholder="Senha" />
+                            <input class="form-control mb-2" placeholder="Nome completo" />
+                            <input class="form-control mb-4" value="2021-02-21" type="date" placeholder="Data de nascimento" />
 
-                <form action="#" method="POST">
-                    <input placeholder="Username" />
-                    <br /><br />
-
-                    <input type="password" placeholder="Senha" />
-                    <br /><br />
-
-                    <input placeholder="Nome completo" />
-                    <br /><br />
-
-                    <input type="date" placeholder="Data de nascimento" />
-                    <br /><br />
-
-                    <input type="submit" value="Cadastrar" />
-                </form>
-            </section>
+                            <button class="btn btn-primary" type="submit">Cadastrar</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
         </main>
     </body>
 </html>

@@ -10,37 +10,66 @@
     
     <body>
         <header>
-            <h1>Perfil</h1>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">WEB - Exercício 3</a>
 
-            <a href="./home.html">Home</a>
-            <a href="./peoples.html">Pessoas</a>
-            <a href="./states.html">Estados</a>
-            <a href="./cities.html">Cidades</a>
-            <a href="./products.html">Produtos</a>
-            <a href="#">Perfil</a>
-            <a href="#">Sair</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Paginal Inicial</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./peoples.html">Pessoas</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./states.html">Estados</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./cities.html">Cidades</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./products.html">Produtos</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Perfil</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Sair</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
         </header>
 
-        <main>
-            <section>
-                <h2>Editar Perfil</h2>
+        <main style="margin-top: 56px;">
+            <div class="p-5 d-flex flex-column gap-5">
+                <section>
+                    <form class="card w-50" action="#" method="POST">
+                        <div class="card-body">
+                            <h2 class="lead mb-3">Editar Perfil</h2>
 
-                <form action="#" method="POST">
-                    <input placeholder="Username" value="renanzan" />
-                    <br /><br />
+                            <input class="form-control mb-2" placeholder="Username" value="renanzan" />
+                            <input class="form-control mb-2" type="password" placeholder="Senha" value="12345678" />
+                            <input class="form-control mb-2" placeholder="Nome completo" value="Renan Henrique Zanoti" />
+                            <input class="form-control mb-4" type="date" value="1998-06-10" />
 
-                    <input type="password" placeholder="Senha" value="12345678" />
-                    <br /><br />
-
-                    <input placeholder="Nome completo" value="Renan Henrique Zanoti" />
-                    <br /><br />
-
-                    <input type="date" value="1998-06-10" />
-                    <br /><br />
-
-                    <input type="submit" value="Salvar alterações" />
-                </form>
-            </section>
+                            <button class="btn btn-primary" type="submit">Salvar alterações</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
         </main>
     </body>
 </html>

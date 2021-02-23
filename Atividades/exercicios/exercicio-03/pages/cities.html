@@ -10,71 +10,103 @@
 
     <body>
         <header>
-            <h1>Cidades</h1>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">WEB - Exercício 3</a>
 
-            <a href="./home.html">Home</a>
-            <a href="./peoples.html">Pessoas</a>
-            <a href="./states.html">Estados</a>
-            <a href="#">Cidades</a>
-            <a href="./products.html">Produtos</a>
-            <a href="./profile.html">Perfil</a>
-            <a href="#">Sair</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Paginal Inicial</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./peoples.html">Pessoas</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./states.html">Estados</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Cidades</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./products.html">Produtos</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./profile.html">Perfil</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Sair</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
         </header>
 
-        <main>
-            <section>
-                <h2>Lista de Cidades</h2>
+        <main style="margin-top: 56px;">
+            <div class="p-5 d-flex flex-column gap-5">
+                <section>
+                    <h2 class="lead mb-3">Lista de Cidades</h2>
 
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome da cidade</th>
-                            <th>Estado</th>
-                            <th>Número de habitantes (2020)</th>
-                        </tr>
-                    </thead>
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome da cidade</th>
+                                <th>Estado</th>
+                                <th>Número de habitantes (2020)</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>João Monlevade</td>
-                            <td>MG</td>
-                            <td>80.416</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Taubaté</td>
-                            <td>SP</td>
-                            <td>317.915</td>
-                        </tr>
-                    </tbody>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>João Monlevade</td>
+                                <td>MG</td>
+                                <td>80.416</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Taubaté</td>
+                                <td>SP</td>
+                                <td>317.915</td>
+                            </tr>
+                        </tbody>
 
-                    <tfoot>
-                        <tr>
-                            <td>Quantidade</td>
-                            <td colspan="2">2</td>
-                            <td>Cidades</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </section>
+                        <tfoot>
+                            <tr>
+                                <td>Quantidade</td>
+                                <td colspan="2">2</td>
+                                <td>Cidades</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </section>
 
-            <hr />
+                <section>
+                    <form class="card w-50" action="#" method="POST">
+                        <div class="card-body">
+                            <h2 class="lead mb-3">Cadastrar cidade</h2>
 
-            <section>
-                <h2>Cadastrar estado</h2>
-
-                <form action="#" method="POST">
-                    <input placeholder="Abreviação" maxlength="2" />
-                    <br /><br />
-
-                    <input placeholder="Nome do estado" step=".5" />
-                    <br /><br />
-
-                    <input type="submit" value="Cadastrar" />
-                </form>
-            </section>
+                            <input class="form-control mb-2" placeholder="Abreviação" maxlength="2" />
+                            <input class="form-control mb-2" placeholder="Nome do estado" />
+                            <input class="form-control mb-4" placeholder="Número de habitantes" type="number" step=".5" />
+                            
+                            <button class="btn btn-primary" type="submit">Cadastrar</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
         </main>
     </body>
 </head>
