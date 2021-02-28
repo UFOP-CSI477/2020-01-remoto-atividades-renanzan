@@ -12,6 +12,9 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
+//## Controllers
+require("./database/controllers/authController")(app);
+
 //## Database Connection
 mongoose.connect(
     process.env.DB_CONNECTION, {
