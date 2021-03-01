@@ -1,6 +1,5 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
 
 const User = require("../models/User");
 const { decryptToken, generateToken } = require("../../utils/authToken");
@@ -12,10 +11,10 @@ router.post('/register', async (req, res) => {
 
     try {
         if(await User.findOne({ email }))
-            return res.status(400).json({ error: "Email already exists." });
+            return res.status(400).json({ message: "Email already exists." });
 
         if(await User.findOne({ username }))
-            return res.status(400).json({ error: "Username already exists." });
+            return res.status(400).json({ message: "Username already exists." });
 
         const user = await User.create(req.body);
 

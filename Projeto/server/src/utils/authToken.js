@@ -23,7 +23,7 @@ const decryptToken = (token) => new Promise(async (resolve, reject) => {
     await jwt.verify(token, process.env.JWT_TOKEN, async (err, decoded) => {
         if(err) {
             if(err.name === "TokenExpiredError")
-                return reject({ status: 403, message: "Expired token" });
+                return reject({ status: 401, message: "Expired token" });
             
             return reject({ status: 401, message: "Invalid token" });
         }
