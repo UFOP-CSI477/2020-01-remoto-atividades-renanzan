@@ -5,5 +5,6 @@ module.exports = {
     getMoonPhase: require("./getMoonPhase"),
     getPerlinColors: require("./getPerlinColors"),
     initializeTerritory: require("./initializeTerritory"),
+    getAvailablePositionsMap: require("./getAvailablePositionsMap"),
     Hex: require("./Hex")
 }
