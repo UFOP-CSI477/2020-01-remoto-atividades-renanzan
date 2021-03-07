@@ -1,19 +1,16 @@
 const mongoose = require("mongoose");
 
 const constructionSchema = mongoose.Schema({
-    start: Date,
+    build: {
+        key: String,
+        next_level: Number
+    },
+    resources: {
+        wood: Number,
+        clay: Number,
+        iron: Number
+    },
     secounds: Number,
-    construction: {
-        resources: {
-            wood: Number,
-            clay: Number,
-            iron: Number
-        },
-        build: {
-            key: String,
-            next_level: Number
-        }
-    }
 });
 
 const VillageSchema = mongoose.Schema({
@@ -129,7 +126,10 @@ const VillageSchema = mongoose.Schema({
         }
     },
     constructionQueue: {
-        type: [constructionSchema]
+        queue: [constructionSchema],
+        lastUpdate: {
+            type: Date
+        }
     }
 }, {
     timestamps: true

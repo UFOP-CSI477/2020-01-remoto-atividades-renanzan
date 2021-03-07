@@ -25,4 +25,12 @@ module.exports = new (class extends Build {
             production: calcResourceProduction(level+1)
         };
     }
+
+    /**
+     * @param {Number} level - Current ClayPit build level
+     * @returns {Number} - Farm production
+     */
+    getProduction(level) {
+        return calcResourceProduction(level);
+    }
 })(1, 30, 65, 50, 40, 10, 15, 6, 1.27, 1.265, 1.24, 1.14, 1.2);

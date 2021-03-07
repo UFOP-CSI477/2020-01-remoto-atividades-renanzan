@@ -10,7 +10,15 @@ function getDuration(secounds) {
             break;
     }
 
-    return duration;
+    var totalInSecounds = 0;
+    var timeMeasure = 0;
+    for(const key of Object.keys(duration).reverse()) {
+        totalInSecounds += (duration[key] * Math.pow(60, timeMeasure));
+
+        timeMeasure++;
+    }
+
+    return { ...duration, totalInSecounds };
 }
 
 /**

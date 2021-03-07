@@ -84,10 +84,6 @@ router.post("/join/:mapId", authMiddleware, async (req, res) => {
 
             await village.save();
         } catch(err) {
-            console.log("\n\n\n");
-            console.log(err);
-            console.log("\n\n\n");
-            
             return res.status(400).json({ message: "Error creating a village" });
         }
 

@@ -67,9 +67,9 @@ module.exports = class Build {
                 requirements: {
                     wood: calcBasedFactor(this.#specs.wood, this.#specs.factor.wood, (level+1)),
                     clay: calcBasedFactor(this.#specs.clay, this.#specs.factor.clay, (level+1)),
-                    iron: calcBasedFactor(this.#specs.iron, this.#specs.factor.iron, (level+1))
+                    iron: calcBasedFactor(this.#specs.iron, this.#specs.factor.iron, (level+1)),
+                    population: calcBasedFactor(this.#specs.population, this.#specs.factor.population, (level+1))
                 },
-                population: calcBasedFactor(this.#specs.population, this.#specs.factor.population, (level+1)),
                 points: calcBuildPoints(this.#specs.basePoints, (level+1))
             }
 
