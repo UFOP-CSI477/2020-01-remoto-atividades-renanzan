@@ -25,4 +25,12 @@ module.exports = new (class extends Build {
             production: calcResourceProduction(level+1)
         };
     }
+
+    /**
+     * @param {Number} level - Current IronMine build level
+     * @returns {Number} - Farm production
+     */
+    getProduction(level) {
+        return calcResourceProduction(level);
+    }
 })(1, 30, 75, 65, 70, 10, 18, 6, 1.252, 1.275, 1.24, 1.17, 1.2);

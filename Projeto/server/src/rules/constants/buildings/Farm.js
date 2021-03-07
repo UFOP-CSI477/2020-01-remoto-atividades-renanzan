@@ -33,4 +33,12 @@ module.exports = new (class extends Build {
         };
     }
 
+    /**
+     * @param {Number} level - Current Farm build level 
+     * @returns {Number} Maximum population capacity
+     */
+    getMaximumPopulation(level) {
+        return this.#calcMaximumPopulation(level);
+    }
+
 })(1, 30, 45, 40, 30, 0, 20, 5, 1.3, 1.32, 1.29, 1, 1.2);
