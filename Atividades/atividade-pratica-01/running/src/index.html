@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Running</title>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <main>
+            <table id="running-table">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+
+            <section id="content">
+                <h4>Register participant</h4>
+
+                <div>
+                    <form id="registration-form">
+                        <input type="number" id="start" placeholder="Start" />
+                        <input id="competitor" placeholder="Competitor" />
+                        <input type="number" id="time" placeholder="Time (seconds)" />
+
+                        <input type="submit" value="Register" />
+                    </form>
+
+                    <button onclick="handleCalculate()">Calculate</button>
+                    <button onclick="handleReset()">Reset</button>
+                </div>
+            </section>
+        </main>
+
+        <script src="./js/table-functions.js"></script>
+    </body>
+</html>

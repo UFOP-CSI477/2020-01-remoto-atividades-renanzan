@@ -1,0 +1,34 @@
+table#running-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    white-space: nowrap;
+    background-color: white;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, .2);
+}
+
+table#running-table td, table#running-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+table#running-table td:not(:last-child) {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+table#running-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+table#running-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+table#running-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
