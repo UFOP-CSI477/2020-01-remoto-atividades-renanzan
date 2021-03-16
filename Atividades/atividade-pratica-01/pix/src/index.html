@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PIX</title>
+        <script src="./services/pix-api.js"></script>
+        <script src="./js/action-functions.js"></script>
+        <script src="./js/redraw-functions.js"></script>
+        <script src="./js/willMount.js"></script>
+        <script src="./js/handlers.js"></script>
+
+        <link rel="stylesheet" href="./style/style.css" />
+    </head>
+
+    <body>
+        <div id="cellphone">
+            <div id="cellphone-display">
+                <div id="notification-bar">
+                    TIM
+                </div>
+
+                <div id="app">
+                    <strong id="welcome-message">Olá, Fulano</strong>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="assets/img/coins.svg" />
+                            <label>Your balance</label>
+                        </div>
+
+                        <div class="card-body">
+                            <label>Valor disponível de até:</label>
+                            <label class="balance">R$ <span id="balance">50,00</span></label>
+                        </div>
+                    </div>
+
+                    <div id="bottom-popup">
+                        <div id="bottom-popup-header">
+                            <img id="close-button" src="assets/img/cancel.svg" />
+                            <label>Transferência PIX</label>
+                        </div>
+
+                        <div id="table-container">
+                            <table id="history-table">
+                                <tbody></tbody>
+                            </table>
+                        </div>
+
+                        <form id="form-transfer">
+                            <div class="input-container">
+                                <input id="nickname" placeholder="Nickname" />
+                                <input id="value" type="number" placeholder="Value (R$)" />
+                                <input id="pix-key" placeholder="Name, CPF/CNPJ or Pix key" />
+                            </div>
+                            
+                            <ul id="contact-list"></ul>
+
+                            <button onclick="handleTrasfer()">
+                                <img src="assets/img/next.svg" />
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./js/didMount.js"></script>
+    </body>
+</html>

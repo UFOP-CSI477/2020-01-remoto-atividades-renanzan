@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'daxline';
+    src: url('./assets/fonts/Daxline/DaxlinePro-Thin_13132.ttf');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'daxline';
+    src: url('./assets/fonts/Daxline/DaxlinePro-Light_13129.ttf');
+    font-weight: 200;
+}
+
+
+@font-face {
+    font-family: 'daxline';
+    src: url('./assets/fonts/Daxline/DaxlinePro-Regular_13131.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'daxline';
+    src: url('./assets/fonts/Daxline/DaxlinePro-Medium_13130.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'daxline';
+    src: url('./assets/fonts/Daxline/DaxlinePro-Bold_13127.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'daxline';
+    src: url('./assets/fonts/Daxline/DaxlinePro-ExtraBold_13128.ttf');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'daxline';
+    src: url('./assets/fonts/Daxline/DaxlinePro-Black_13126.ttf');
+    font-weight: 900;
+}

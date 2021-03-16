@@ -1,0 +1,34 @@
+div#cellphone {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 640px;
+    background: #8A05BE;
+    border-radius: 8px;
+    box-shadow: inset 0 0 24px rgba(218, 255, 85, 0.4);
+}
+
+div#cellphone:before {
+    position: absolute;
+    content: " ";
+    background: black;
+    width: calc(360px + 24px);
+    height: calc(640px + 120px);
+    left: -12px;
+    top: -32px;
+    z-index: -1;
+    border-radius: 32px;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, .3);
+}
+
+div#cellphone:after {
+    position: absolute;
+    content: " ";
+    background: #C4C4C4;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    bottom: -64px;
+    align-self: center;
+}
