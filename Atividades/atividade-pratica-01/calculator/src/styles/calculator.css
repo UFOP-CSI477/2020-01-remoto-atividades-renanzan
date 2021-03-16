@@ -1,0 +1,122 @@
+* {
+    color: #5F5E70;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: 0;
+    background-color: #F0F0F0;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 24px;
+    user-select: none;
+}
+
+button, button > * {
+    transition: background 250ms, transform 250ms, border-radius 125ms;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, .05);
+}
+
+button:hover > * {
+    transform: scale(1.2);
+}
+
+button:active {
+    border-radius: 50%;
+}
+
+div#calculator {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 350px;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, .2);
+    overflow: hidden;
+}
+
+div#calculator > div#display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 16px;
+    gap: 8px;
+}
+
+div#calculator > div#display > div#display-history {
+    opacity: .6;
+    min-height: 25px;
+}
+
+div#calculator > div#display > div#display-result {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 72px;
+    line-height: 72px;
+    overflow: hidden;
+}
+
+div#calculator > div#keyboard {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+div#calculator > div#keyboard > div {
+    flex: 1;
+    display: flex;
+}
+
+div#calculator > div#keyboard > div#keyboard-footer {
+    background: #5F5E70;
+}
+
+div#calculator > div#keyboard > div > * {
+    flex: 1;
+    display: block;
+    height: 100%;
+    padding: 0px;
+}
+
+div#calculator > div#keyboard > div#keyboard-footer > *,
+div#calculator > div#keyboard > div#keyboard-footer > button > * {
+    color: #FFFFFF;
+}
+
+div#calculator > div#keyboard > div#keyboard-footer > *:last-child {
+    background: #FF5467;
+    box-shadow: 0px 0px 16px rgba(255, 84, 103, .8);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, .4);
+}
+
+div#calculator > div#keyboard > div#keyboard-footer > *:last-child:hover {
+    transform: scale(1.1);
+    transform-origin: bottom right;
+}
+
+div#calculator > div#keyboard > div > * {
+    font-weight: 100;
+}
+
+div#calculator > div#keyboard > div#keyboard-head > *,
+div#calculator > div#keyboard > div > *:last-child {
+    font-weight: normal;
+}

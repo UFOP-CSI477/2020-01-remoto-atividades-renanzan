@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <link rel="stylesheet" href="./styles/calculator.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap" rel="stylesheet">
+
+    <script src="./constants/operators.js"></script>
+    <script src="./js/listener.js"></script>
+    <script src="./js/calculator.js"></script>
+    <script src="./js/displayFunctions.js"></script>
+    <script src="./js/handle.js"></script>
+</head>
+<body>
+    <div id="calculator">
+
+        <div id="display">
+            <div id="display-history"></div>
+            <div id="display-result">0</div>
+        </div>
+        
+        <div id="keyboard">
+            <div id="keyboard-head">
+                <button onclick="handleClearButton()" title="Shortcut: Esc">
+                    <div>C</div>
+                </button>
+
+                <button onclick="handleCancelEntry()">
+                    <div>CE</div>
+                </button>
+
+                <button onclick="handleOperatorButton(SQUARE_ROOT)">
+                    <div>²√</div>
+                </button>
+                
+                <button onclick="handleOperatorButton(SUM)">
+                    <div>+</div>
+                </button>
+            </div>
+
+            <div>
+                <button onclick="handleNumericButton(7)">
+                    <div>7</div>
+                </button>
+                
+                <button onclick="handleNumericButton(8)">
+                    <div>8</div>
+                </button>
+                
+                <button onclick="handleNumericButton(9)">
+                    <div>9</div>
+                </button>
+                
+                <button onclick="handleOperatorButton(SUBTRACTION)">
+                    <div>-</div>
+                </button>
+            </div>
+
+            <div>
+                <button onclick="handleNumericButton(4)">
+                    <div>4</div>
+                </button>
+                
+                <button onclick="handleNumericButton(5)">
+                    <div>5</div>
+                </button>
+                
+                <button onclick="handleNumericButton(6)">
+                    <div>6</div>
+                </button>
+                
+                <button onclick="handleOperatorButton(MULTIPLICATION)">
+                    <div>x</div>
+                </button>
+            </div>
+
+            <div>
+                <button onclick="handleNumericButton(1)">
+                    <div>1</div>
+                </button>
+                
+                <button onclick="handleNumericButton(2)">
+                    <div>2</div>
+                </button>
+                
+                <button onclick="handleNumericButton(3)">
+                    <div>3</div>
+                </button>
+                
+                <button onclick="handleOperatorButton(DIVISION)">
+                    <div>÷</div>
+                </button>
+            </div>
+
+            <div id="keyboard-footer">
+                <button onclick="handleNumericButton(0)">
+                    <div>0</div>
+                </button>
+                
+                <button onclick="handleCommaButton()">
+                    <div>,</div>
+                </button>
+                
+                <span></span>
+                
+                <button onclick="handleResultButton()">
+                    <div>=</div>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
