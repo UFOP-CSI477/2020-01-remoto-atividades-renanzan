@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Introdução a Formulários JS</title>
+        <link rel="stylesheet" href="./styles/style.css" />
+    
+        <script type="module">
+            'use strict'
+
+            import People from "./classes/People.js";
+            var tooltipInterval;
+
+            function getNow() {
+                const now = new Date();
+
+                const pad = (num) => (num < 10) ? '0' + num.toString() : num.toString();
+
+                return `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+            }
+
+            document.getElementById("form-people-info").addEventListener("submit", (e) => {
+                e.preventDefault();
+                const name = document.getElementById("name").value;
+                const lastName = document.getElementById("last-name").value;
+                const age = document.getElementById("age").value;
+
+                try {
+                    const people = new People(name, lastName, age);
+                
+                    document.getElementById("tooltip").setAttribute("error", "false");
+                    document.getElementById("tooltip-title").innerText = "Cadastrado com sucesso!";
+                    document.getElementById("tooltip-content").innerText = `[${getNow()}] ${people.toString()}, ${people.toJSON().age} anos`;
+
+                } catch(err) {
+                    console.error(err);
+
+                    document.getElementById("tooltip").setAttribute("error", "true");
+                    document.getElementById("tooltip-title").innerText = "Falha ao cadastrar";
+                    document.getElementById("tooltip-content").innerText =`[${getNow()}] ${err.message}`;
+                }
+
+                document.getElementById("tooltip").setAttribute("show", "true");
+
+                if(tooltipInterval)
+                        clearInterval(tooltipInterval);
+
+                tooltipInterval = setInterval(() => {
+                    document.getElementById("tooltip").setAttribute("show", "false");
+                }, 3000);
+            });
+        </script>
+    </head>
+
+    <body>
+        <form id="form-people-info">
+            <h1>Ficha da pessoa</h1>
+
+            <div id="inputs">
+                <input spellcheck="false" autocomplete="off" id="name" placeholder="Nome" />
+                <input spellcheck="false" autocomplete="off" id="last-name" placeholder="Sobrenome" />
+                <input id="age" type="number" placeholder="Idade" />
+            </div>
+
+            <input type="submit" value="Cadastrar" />
+        </form>
+
+        <div id="tooltip" show="false">
+            <strong id="tooltip-title">Cadastrado com sucesso!</strong>
+            <span id="tooltip-content">Renan Zanoti, 22 anos</span>
+        </div>
+    </body>
+</html>
