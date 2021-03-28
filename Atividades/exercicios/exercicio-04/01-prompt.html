@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Introdução ao JS</title>
+    
+        <script>
+            'use strict'
+
+            class People {
+                #name;
+                #lastName;
+                #age;
+
+                constructor(name, lastName, age) {
+                    this.#name = name;
+                    this.#lastName = lastName;
+                    this.#age = age;
+                }
+
+                toString() {
+                    return `${this.#name} ${this.#lastName}`;
+                }
+
+                toJSON() {
+                    return { name: this.#name, lastName: this.#lastName, age: this.#age }
+                }
+            }
+
+            function getUserInfo() {
+                const people = new People(
+                    window.prompt("Digite seu nome:"),
+                    window.prompt("Digite seu sobrenome:"),
+                    window.prompt("Digite sua idade")
+                );
+
+                document.getElementById("name").innerText = "Nome: " + people.toString();
+                document.getElementById("age").innerText = "Idade: " + people.toJSON().age;
+            }
+        </script>
+
+        <style>
+            h1, h3 {
+                margin: 0px;
+            }
+
+            h1:empty, h3:empty {
+                display: none;
+            }
+
+            #card {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                border: 1px dashed black;
+                border-radius: 4px;
+                padding: 8px 16px;
+                margin: 64px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="card">
+            <h1 id="name"></h1>
+            <h3 id="age"></h3>
+            <button onclick="getUserInfo()">Informar dados</button>
+        </div>
+    </body>
+</html>

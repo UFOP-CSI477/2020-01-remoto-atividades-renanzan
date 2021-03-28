@@ -1,0 +1,97 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #353535;
+}
+
+body {
+    margin: 0;
+    background: #f1faee;
+}
+
+#form-people-info {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    background: #fff;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 40px 56px;
+    gap: 16px;
+}
+
+#form-people-info > h1 {
+    margin: 0;
+    font-variant: small-caps;
+    text-transform: uppercase;
+    font-size: 16px;
+    align-self: center;
+    margin-top: 4px;
+}
+
+div#inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+#form-people-info input:not([type="submit"]) {
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+#form-people-info input:not([type="submit"]):hover,
+#form-people-info input:not([type="submit"]):focus {
+    text-decoration: underline;
+}
+
+#form-people-info input:not([type="submit"])::placeholder {
+    text-align: center;
+    font-style: italic;
+    background: rgba(0, 0, 0, .05);
+    color: rgba(0, 0, 0, .5);
+    padding: 100% 0;
+}
+
+#form-people-info input[type="submit"] {
+    align-self: flex-end;
+    margin: 0 4px 4px 0;
+    min-width: 100px;
+}
+
+#tooltip {
+    position: absolute;
+    bottom: 16px;
+    right: 32px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    text-align: center;
+    background: #168821;
+    color: #fff;
+    padding: 4px 16px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 100;
+    opacity: 0;
+    transition: opacity 250ms;
+}
+
+#tooltip[error="true"] {
+    background: red;
+}
+
+#tooltip[show="true"] {
+    opacity: 1;
+}
+
+#tooltip > strong {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#tooltip * {
+    color: #fff;
+}
