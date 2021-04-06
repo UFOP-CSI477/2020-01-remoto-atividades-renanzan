@@ -5,10 +5,9 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import rootReducer from './modules/index';
 
-export const initStore = (initialState = {}) => {
+export const initStore = () => {
     return createStore(
         rootReducer,
-        initialState,
         process.env.NODE_ENV === 'development' ?
             composeWithDevTools(applyMiddleware(thunk), applyMiddleware(logger)) :
             compose(applyMiddleware(thunk))

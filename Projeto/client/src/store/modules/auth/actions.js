@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie';
 import api, { authenticate, validate, register } from '@api';
 
+import { closeAuthenticationModal } from '../interface/actions';
 import { Types } from './constants';
 
 function signRequest() {
@@ -26,6 +27,8 @@ export function signIn(username, password, persist) {
             const response = await authenticate(username, password, persist);
             const { token, user } = response.data;
 
+            dispatch(closeAuthenticationModal());
+
             return dispatch(signInSuccess(token, user, persist))
         } catch (err) {
             return dispatch(signFailure(err));
@@ -50,7 +53,7 @@ function signInSuccess(token, user, persist) {
 export function signInValidate(token) {
     return async (dispatch) => {
         await validate(token).then(res => {
-            const { user } = res.data;
+            const user = res.data;
     
             return dispatch(signInSuccess(token, user));
         })
@@ -81,8 +84,6 @@ export function signOut() {
     delete api.defaults.headers.Authorization;
 
     Cookies.remove('token');
-
-    console.log({ teste: api.defaults.headers.Authorization });
 
     return {
         type: Types.SIGN_OUT

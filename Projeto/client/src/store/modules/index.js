@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
+import interfaceReducer from './interface/reducer';
 import authReducer from './auth/reducer';
+import worldReducer from './world/reducer';
 
 export default combineReducers({
-    auth: authReducer
+    interface: interfaceReducer, 
+    auth: authReducer,
+    world: worldReducer
 });

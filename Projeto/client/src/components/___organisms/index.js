@@ -1,0 +1,1 @@
+export { default as ModalAuthentication } from './ModalAuthentication';

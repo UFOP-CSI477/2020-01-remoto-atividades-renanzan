@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo - validação do formulário com Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>Cálculo com formulário</h1>
+        <p>Validação e apresentação em Bootstrap</p>
+    </div>
+
+    <div class="container">
+        <form id="data-form">
+            <div class="form-group">
+                <label for="fullname">Nome completo</label>
+                <input type="text" name="fullname" id="fullname" class="form-control">
+
+                <div id="alert-fullname" class="alert alert-danger" style="display: none">
+                    <span>Preencha o primeiro valor corretamente!</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="document">CPF</label>
+                <input type="text" name="document" id="document" class="form-control">
+
+                <div id="alert-document" class="alert alert-danger" style="display: none">
+                    <span>Ooops! Documento inválido, tente novamente.</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password" class="form-control">
+
+                <div id="alert-password" class="alert alert-danger" style="display: none">
+                    <span>Senha inválida</span>
+                </div>
+            </div>
+
+            <input type="button" value="Cadastrar" onclick="handleRegister()" class="btn btn-primary">
+        </form>
+    </div>
+
+    <script src="./validation.js"></script>
+</body>
+
+</html>
