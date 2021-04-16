@@ -27,8 +27,8 @@ export default function ListWorlds() {
             </WelcomeMessageContainer>
 
             <List>
-                {(availableWordList.map((world, index) => (
-                    <WorldItem key={index} index={index} world={world} />
+                {(availableWordList?.map((world, index) => (
+                    <WorldItem key={index} world={world} />
                 )))}
             </List>
         </ListWorldsContainer>

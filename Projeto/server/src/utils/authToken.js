@@ -20,11 +20,11 @@ function generateToken(params, expiresIn) {
  * @description Use to decode the jwt authentication token
  */
 const decryptToken = (token) => new Promise(async (resolve, reject) => {
-    await jwt.verify(token, process.env.JWT_TOKEN, async (err, decoded) => {
+    await jwt.verify(token.replace("Bearer ", ""), process.env.JWT_TOKEN, async (err, decoded) => {
         if(err) {
             if(err.name === "TokenExpiredError")
                 return reject({ status: 401, message: "Expired token" });
-            
+
             return reject({ status: 401, message: "Invalid token" });
         }
             

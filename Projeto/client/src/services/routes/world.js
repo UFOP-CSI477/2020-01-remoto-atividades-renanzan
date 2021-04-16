@@ -19,15 +19,23 @@ export function saveWorld(info, grid) {
 export function listWorld() {
     return new Promise((resolve, reject) => {
         api.get('/world')
-            .then(resolve)
+            .then(res => resolve(res.data))
             .catch(reject);
     });
 }
 
 export function getWorld(id) {
     return new Promise((resolve, reject) => {
-        api.get(`/world/${id}`)
-            .then(resolve)
+        api.get(`/world/get/${id}`)
+            .then(res => resolve(res.data))
             .catch(reject);
     });
+}
+
+export function joinWorld(id) {
+    return new Promise((resolve, reject) => {
+        api.post(`/world/join/${id}`)
+            .then(res => resolve(res.data))
+            .catch(reject)
+    })
 }

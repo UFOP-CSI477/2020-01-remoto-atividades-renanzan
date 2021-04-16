@@ -6,32 +6,80 @@ const { WorldModel, VillageModel } = require("../models");
 const { generateWorld, getDayPhase, getMoonPhase, getAvailablePositionsMap } = require("../../rules/world");
 const authMiddleware = require("../../middleware/auth");
 
-router.get("/", (req, res) => {
-    return WorldModel.find({}).select(["-grid"]).then((cust) => {
-        res.status(200).json(cust);
+router.get("/", authMiddleware, (req, res) => {
+    WorldModel
+        .find({})
+        .select(["-grid"])
+        .lean()
+        .then((worlds) => {
+            VillageModel
+                .find({'owner.user': req.user.id})
+                .distinct("owner.map")
+                .then(playing => {
+                    playing.forEach(playingWorld => {
+                        const world = worlds.filter(world => String(world._id) === String(playingWorld))[0];
+                        
+                        if(world)
+                            world.info.playing = true;
+                    });
+
+                    worlds.sort((a, b) => {
+                        if(Boolean(a.info.playing) && !Boolean(b.info.playing))
+                            return -1;
+
+                        return String(a).localeCompare(b);
+                    });
+
+                    res.status(200).json(worlds);
+                })
+                .catch(err => {
+                    res.status(404).json({ message: "Villages not found" });
+                });
     }).catch(err => {
         res.status(400).json(err);
     })
 });
 
-router.get("/get/:id", (req, res) => {
+router.get("/get/:id", authMiddleware, (req, res) => {
     const _id = req.params.id;
 
     try {
-        WorldModel.findOne({ _id }, (err, cust) => {
+        WorldModel.findOne({ _id }, async (err, cust) => {
             if(err)
                 return res.status(404).json({ message: "World not found" });
 
             const { info, grid } = cust;
 
-            res.json({
-                info,
-                grid,
-                now: {
-                    timePhase: getDayPhase(),
-                    moonPhase: getMoonPhase()
-                }
-            });
+            try {
+                const village = await VillageModel.findOne({
+                    'owner.user': req.user.id,
+                    'owner.map': _id
+                }).exec();
+        
+                if(!village)
+                    return res.status(400).json({ message: "This user doesn't have a village in this world" });
+
+                delete info.$init;
+
+                res.json({
+                    info: {
+                        ...info,
+                        center: {
+                            x: village.location.x,
+                            y: village.location.y,
+                            z: village.location.z,
+                        },
+                        village: village._id
+                    },
+                    grid,
+                    now: {
+                        timePhase: getDayPhase(),
+                        moonPhase: getMoonPhase()
+                    }
+                });
+            } catch(err) {
+                return res.status(400).json({ message: "It was not possible to verify if the user already has a village in this world" });
+            }
         });
     } catch(err) {
         res.status(400).json({ message: "Invalid id" });
@@ -67,6 +115,19 @@ router.post("/store", (req, res) => {
 
 router.post("/join/:mapId", authMiddleware, async (req, res) => {
     const { mapId } = req.params;
+
+    //## Verifica se o usuário já possui uma vila nesse mundo
+    try {
+        const villages = await VillageModel.find({
+            'owner.user': req.user.id,
+            'owner.map': mapId
+        }).exec();
+
+        if(villages.length > 0)
+            return res.status(403).json({ message: "This user already has a village in this world" });
+    } catch(err) {
+        return res.status(400).json({ message: "It was not possible to verify if the user already has a village in this world" });
+    }
 
     try {
         const map = await WorldModel.findById(mapId);

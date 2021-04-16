@@ -1978,6 +1978,11 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.7.tgz#2a5fb75e1015e84dd15692f71e89a1450290950b"
   integrity sha512-KxnUB0ZMlnUWCsx2Z8MUsr6qV6ja1w9ArPErJaJaF8a5SOWoHLIszeCTKGRGRgtLgYrs1E8CHkNSP1VZTTPc9g==
 
+d3@3.5.14:
+  version "3.5.14"
+  resolved "https://registry.yarnpkg.com/d3/-/d3-3.5.14.tgz#70e73d175f52f2a829bfbc3a9c1d264852662366"
+  integrity sha1-cOc9F19S8qgpv7w6nB0mSFJmI2Y=
+
 data-uri-to-buffer@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-3.0.1.tgz#594b8973938c5bc2c33046535785341abc4f3636"

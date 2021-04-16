@@ -11,3 +11,17 @@ export function setAvailableWordList(availableWordList) {
         payload: { availableWordList }
     });
 }
+
+export function setCurrentWorld(id, data) {
+    return ({
+        type: Types.SET_CURRENT_WORLD,
+        payload: { id, data }
+    });
+}
+
+export function setCurrentWorldConfig(center, scale) {
+    return ({
+        type: Types.SET_CURRENT_WORLD_CONFIG,
+        payload: { center, scale }
+    })
+}

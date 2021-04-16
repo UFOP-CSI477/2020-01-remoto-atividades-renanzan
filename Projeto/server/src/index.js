@@ -17,6 +17,7 @@ app.use(cors());
 require("./database/controllers/authController")(app);
 require("./database/controllers/worldController")(app);
 require("./database/controllers/villageController")(app);
+require("./database/controllers/formController")(app);
 
 //## Database Connection
 mongoose.connect(

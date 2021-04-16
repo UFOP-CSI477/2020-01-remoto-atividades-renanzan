@@ -27,8 +27,6 @@ export function signIn(username, password, persist) {
             const response = await authenticate(username, password, persist);
             const { token, user } = response.data;
 
-            dispatch(closeAuthenticationModal());
-
             return dispatch(signInSuccess(token, user, persist))
         } catch (err) {
             return dispatch(signFailure(err));
@@ -37,16 +35,20 @@ export function signIn(username, password, persist) {
 }
 
 function signInSuccess(token, user, persist) {
-    api.defaults.headers.Authorization = `Bearer ${token}`;
+    return (dispatch) => {
+        api.defaults.headers.Authorization = `Bearer ${token}`;
 
-    if(persist)
-        Cookies.set('token', token);
-    else
-        Cookies.set('token', token, { expires: 1 });
-
-    return {
-        type: Types.SIGN_IN_SUCCESS,
-        payload: { token, user }
+        if(persist)
+            Cookies.set('token', token);
+        else
+            Cookies.set('token', token, { expires: 1 });
+    
+        dispatch(closeAuthenticationModal());
+    
+        return dispatch({
+            type: Types.SIGN_IN_SUCCESS,
+            payload: { token, user }
+        })
     }
 }
 

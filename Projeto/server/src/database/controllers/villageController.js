@@ -4,7 +4,9 @@ const getVillageResources = require("../../rules/calculations/getVillageResource
 const VillageModel = require("../models/Village");
 const getBuildingsInfo = require("../../rules/village/getBuildingsInfo");
 const Buildings = require("../../rules/constants/buildings");
-const ConstructionQueue = require("../../rules/village/ConstructionQueue")
+const ConstructionQueue = require("../../rules/village/ConstructionQueue");
+
+const authMiddleware = require("../../middleware/auth");
 
 const router = express.Router();
 
@@ -93,6 +95,31 @@ router.post("/:id/reset", async (req, res) => {
     } catch(err) {
         res.status(404).json({ message: "Village not found" });
     }    
+});
+
+router.get("/", authMiddleware, async (req, res) => {
+    VillageModel.find({
+        'owner.user': req.user.id
+    }).exec((err, villages) => {
+        if(err)
+            res.status(404).json({ message: "Villages not found" });
+
+        res.json(villages);
+    });
+});
+
+router.get("/world/:id", authMiddleware, async (req, res) => {
+    const { id } = req.params;
+
+    VillageModel.find({
+        'owner.user': req.user.id,
+        'owner.map': id
+    }).exec((err, villages) => {
+        if(err)
+            res.status(404).json({ message: "Villages not found" });
+
+        res.json(villages);
+    });
 });
 
 module.exports = app => app.use('/village', router);
